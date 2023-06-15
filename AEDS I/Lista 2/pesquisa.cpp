@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     
-    int idade, cont = 1, analise, m = 0;
+    int idade, cont = 1, m = 0;
     string sexo, olhos, cabelos;
 
     do{

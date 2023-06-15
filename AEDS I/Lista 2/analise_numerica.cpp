@@ -5,24 +5,51 @@ using namespace std;
 
 int main() {
 
-    int n, pos, neg;
+    int n, pos = 0, neg = 0;
     float maior, menor, soma, pp, pn, ma;
-    string continuar;
+    string continuar = "S";
 
-    do{
-            
+    //do{
+    //while(continuar == "S") {
+
+    for (int i = 0; continuar == "S"; i++) {
+
         //quantidade de números a serem analisados.
-        do {
+        
+        // com a estrutura do-while
+        /*do {
             cout << "Quantos numeros deseja analisar? (numeros positivos > 20)\n";
             cin >> n;
 
             if (n >= 20 or n < 1) {
                 cout << "QUANTIDADE INVALIDA!\n";
             }
-        } while (n >= 20 or n < 1);
+        } while (n >= 20 or n < 1);*/
+
+        // com a estrutura while
+        /*cout << "Quantos numeros deseja analisar? (numeros positivos > 20)\n";
+            cin >> n;
+
+        while(n >=20 or n < 1){
+            cout << "QUANTIDADE INVALIDA!\n";
+            cout << "Quantos numeros deseja analisar? (numeros positivos > 20)\n";
+            cin >> n;
+        }*/
+
+        // com a estrutura for
+        cout << "Quantos numeros deseja analisar? (numeros positivos > 20)\n";
+            cin >> n;
+        
+        for(int i=0; n >= 20 or n < 1; i++){
+            cout << "QUANTIDADE INVALIDA!\n";
+            cout << "Quantos numeros deseja analisar? (numeros positivos > 20)\n";
+            cin >> n;
+        }
 
         //quais números serão analisados.
-        float num[n];
+        
+        //com a estrutura for
+        /*float num[n];
 
         cout << "Digite o(s) " << n << " numero(s):\n";
         for (int i = 0; i < n; i++) {
@@ -30,12 +57,30 @@ int main() {
         }
 
         maior = num[0];
-        menor = num[0];
-        soma = 0;
-        pos = 0;
-        neg = 0;
+        menor = num[0];*/
 
-        for(int i = 0; i < n; i++) {
+        // para a estrutura while e do-while
+        float primeiro, num;
+        int cont = 1;
+
+        cout << "Digite o primeiro numero:\n";
+        cin >> primeiro;
+
+        maior = primeiro;
+        menor = primeiro;
+
+        if(primeiro >= 0) {
+            pos++;
+        }
+        else {
+            neg++;
+        } 
+
+        //soma = 0;
+        soma += primeiro;
+
+        // com a estrutura for
+        /*for(int i = 0; i < n; i++) {
 
             // maior
             if (num[i] > maior) {
@@ -58,7 +103,67 @@ int main() {
             else{
                 neg++;
             }
-        }
+        }*/
+
+        // com a estrutura while
+        /*while(cont < n){
+            cout << "Digite o " << cont + 1 << " numero:\n";
+            cin >> num;
+
+            // maior
+            if (num > maior) {
+                maior = num;
+            }
+
+            // menor
+            if (num < menor) {
+                menor = num;
+            }
+
+            // soma dos valores
+            soma+=num;
+
+            // positivos
+            if(num >= 0) {
+                pos++;
+            }
+            // negativos
+            else {
+                neg++;
+            }
+
+            cont++;
+        }*/
+
+        // com a estrutura do-while
+        do{
+            cout << "Digite o " << cont + 1 << " numero:\n";
+            cin >> num;
+
+            // maior
+            if (num > maior) {
+                maior = num;
+            }
+
+            // menor
+            if (num < menor) {
+                menor = num;
+            }
+
+            // soma dos valores
+            soma+=num;
+
+            // positivos
+            if(num >= 0) {
+                pos++;
+            }
+            // negativos
+            else {
+                neg++;
+            }
+
+            cont++;
+        } while(cont < n);
 
         //média aritmética.
         ma = soma/n;
@@ -76,15 +181,38 @@ int main() {
         cout << "A porcentagem de numeros positivos e de " << pp << "%." <<endl;
 
         // continuar análise.
-        do{
+
+        // com a estrutura do-while
+        /*do{
             cout << "Deseja continuar?[S/N]:\n";
             cin >> continuar;
 
             if (continuar != "S" and continuar != "N") {
                 cout << "OPCAO INVALIDA!\n";
             }
-        } while (continuar != "S" and continuar != "N");
+        } while (continuar != "S" and continuar != "N");*/
 
-    } while (continuar == "S");
+        // com a estrutura while
+        /*cout << "Deseja continuar?[S/N]:\n";
+            cin >> continuar;
+        while(continuar != "S" and continuar !="N"){
+            cout << "OPCAO INVALIDA!\n";
+            cout << "Deseja continuar?[S/N]:\n";
+            cin >> continuar;
+        }*/
+
+        //com a estrutura for
+        cout << "Deseja continuar?[S/N]:\n";
+            cin >> continuar;
+        for(int i = 0; continuar != "S" and continuar !="N"; i++){
+            cout << "OPCAO INVALIDA!\n";
+            cout << "Deseja continuar?[S/N]:\n";
+            cin >> continuar;
+        }
+
+    
+    }
+    //}
+    //} while (continuar == "S");
     return 0;
 } 

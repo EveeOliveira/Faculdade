@@ -12,7 +12,10 @@ int main() {
 
     int escolha;
 
-    do{
+    //do{
+    //while(escolha != 5) {
+
+    for (int i = 0; escolha != 5; i++){
     cout << "Escolha entre uma das opcoes:\n";
     cout << "\t[1] AREA DO TRIANGULO\n";
     cout << "\t[2] AREA DO QUADRADO\n";
@@ -69,8 +72,10 @@ int main() {
     else {
         cout << "OPCAO INVALIDA!\n";
     }
+    }
 
-    } while(escolha != 5);
+    //}
+    //} while(escolha != 5);
 
     return 0;
 }

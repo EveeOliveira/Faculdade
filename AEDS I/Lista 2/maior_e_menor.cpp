@@ -7,12 +7,54 @@ using namespace std;
 
 int main() {
 
-    const int tamanho = 15;
-    float num[tamanho];
-    float menor, maior;
+    //const int tamanho = 15; 
+    //float num[tamanho];
+    float menor, maior, num, primeiro;
+    int cont = 1;
 
-    cout << "Digite 15 numeros reais quaisquer:\n";
-    for (int i = 0; i < 15; i++) {
+    cout << "Escolha 15 numeros reais quaisquer:\n";
+    
+    // para as estruturas do-while e while
+    cout << "Digite o primeiro numero:\n";
+        cin >> primeiro;
+
+        maior = primeiro;
+        menor = primeiro;
+
+    do{
+        cout << "Digite o " << cont + 1 << " numero:\n";
+        cin >> num;
+
+        // maior
+        if (num > maior) {
+            maior = num;
+        }
+        // menor
+        if (num < menor) {
+            menor = num;
+        }
+        
+        cont++;
+    } while(cont < 15);
+
+    /*while(cont < 15){
+        cout << "Digite o " << cont + 1 << " numero:\n";
+        cin >> num;
+
+        // maior
+        if (num > maior) {
+            maior = num;
+        }
+        // menor
+        if (num < menor) {
+            menor = num;
+        }
+        
+        cont++;
+    }*/
+    
+    // com a estrutura for
+    /*for (int i = 0; i < 15; i++) {
         cin >> num[i];
     }
 
@@ -29,7 +71,7 @@ int main() {
         if (num[i] < menor) {
             menor = num[i];
         }
-    }
+    }*/
 
     cout << "O maior numero entre os 15 e " << maior << endl;
     cout << "O menor numero entre os 15 e " << menor << endl;

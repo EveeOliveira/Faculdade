@@ -9,7 +9,9 @@ int main() {
     float ma;
 
     cout << "Digite alguns numeros ate que sua soma seja no minimo 100:\n";
-    do{
+    
+    // com a estrutura do-while
+    /*do{
         cin >> num;
 
         //soma dos valores de entrada.
@@ -20,7 +22,35 @@ int main() {
 
         //O valor da soma.
         cout << "Total = " << soma <<endl;
-    } while (soma < 100);
+    } while (soma < 100);*/
+
+    // com a estrutura while
+    /*while(soma < 100){
+        cin >> num;
+
+        //soma dos valores de entrada.
+        soma += num;
+
+        //quantidade de números.
+        cont++;
+
+        //O valor da soma.
+        cout << "Total = " << soma <<endl;
+    }*/
+
+    // com a estrutura for
+    for(int i = 0; soma < 100; i++){
+        cin >> num;
+
+        //soma dos valores de entrada.
+        soma += num;
+
+        //quantidade de números.
+        cont++;
+
+        //O valor da soma.
+        cout << "Total = " << soma <<endl;
+    }
 
     //média aritmética.
     ma = soma/cont;
